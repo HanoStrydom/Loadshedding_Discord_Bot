@@ -5,13 +5,14 @@ from dotenv import load_dotenv
 from datetime import date
 import calendar
 
+load_dotenv()
+
 my_date = date.today()
 WeekDayName = calendar.day_name[my_date.weekday()]
 
 payload={}
 headers = {'token': os.getenv('MAIN_KEY')} #Main Key
-print(headers)
-# headers = {'token': os.getenv('ADDITIONAL_KEY')} #Test Key
+#headers = {'token': os.getenv('ADDITIONAL_KEY')} #Test Key
 
 def Get_Status(payload, headers):
     url = "https://developer.sepush.co.za/business/2.0/status"
